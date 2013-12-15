@@ -1,0 +1,5 @@
+12/14 - Calvin
+- created bare-bone android app
+- supports Android sdk version 8 - 17 (2.2 Froyo - 4.3 Jellybean)
+- not sure what to name app, we can always change it later.
+- currently looking at how to implement alarm/wake feature, someone might want to look at how to read/write data
