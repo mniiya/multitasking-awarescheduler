@@ -10,3 +10,10 @@
 - updated to support Android sdk version 2.3 - 4.4
 - what it is supposed to do currently is to show as a new plugin for AWARE, which should be toggle-able, but does nothing at the moment except to show itself turning on or off when toggled by user.  i think.  still trying to figure out how to run it on my emulator and my phone.
 - Devin i would recommend that for now, figure out how to get the read/write part working as a separate android app/project.  That app could just have some sort of text field that the user can see a question (retrieved from the file), and answer into a text box (to be stored in a file).  and then check if the file is created and formatted correctly.  Reason i'm recommending this is that when problems arise for the parts we're working on, it won't break the other persons' code if we were working on separate projects for the separate parts.  Once the parts we're working on work, we can then fuse the whole project together and start testing/debugging.
+
+12/23 - Calvin
+- ESM should show up, along with the phone vibrating to indicate that a ESM has popped up
+- This will only work once, to restart it, you would have to disable and re-enable the plugin to get it to reinitialize.
+- still can’t get the alarm manager to work, even in a separate project.  currently in this project there is no alarm manager thing to set when the ESM shows up.  would be great if someone figured out what I did wrong so i can start implementing the ESM times in.
+
+- 

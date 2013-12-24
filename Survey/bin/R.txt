@@ -4,9 +4,8 @@ int bool is_not_jelly_bean 0x7f050001
 int drawable ic_action_download 0x7f020000
 int drawable ic_action_settings 0x7f020001
 int drawable ic_action_update 0x7f020002
-int drawable ic_launcher 0x7f020003
-int drawable ic_launcher_aware 0x7f020004
-int drawable ic_launcher_settings 0x7f020005
+int drawable ic_launcher_aware 0x7f020003
+int drawable ic_launcher_settings 0x7f020004
 int id esm_answers 0x7f080007
 int id esm_cancel 0x7f080002
 int id esm_checkboxes 0x7f080001
