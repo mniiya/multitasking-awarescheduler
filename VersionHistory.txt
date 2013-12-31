@@ -16,4 +16,7 @@
 - This will only work once, to restart it, you would have to disable and re-enable the plugin to get it to reinitialize.
 - still can’t get the alarm manager to work, even in a separate project.  currently in this project there is no alarm manager thing to set when the ESM shows up.  would be great if someone figured out what I did wrong so i can start implementing the ESM times in.
 
-- 
+12/30 - Calvin
+- All 6 ESMs should display on startup.  But number 2 shows the range separately, while number 3 has it in star form with the graphical errors.  The graphics do not seem to be modifiable.
+- Alarm functionality is in the code, however I don’t know if it works.  Feel free to try it out.
+- Let me know if the project does not seem to run because of some error, I just copied and replaced everything from my renamed project folder into the folder in github.
