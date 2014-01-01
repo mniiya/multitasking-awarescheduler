@@ -31,9 +31,12 @@ public class Alarm extends BroadcastReceiver
 
 	public void SetAlarm(Context context)
 	{
+		//for debugging...
 		Toast t = Toast.makeText(context, "Alarm set...", Toast.LENGTH_SHORT);
 		t.show();
 		Log.d("ALARM!!", "SetAlarm() executed!");
+		
+		
 		AlarmManager am = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 		Intent i = new Intent(context, Alarm.class);
 		PendingIntent pi = PendingIntent.getBroadcast(context, 0, i, 0);
@@ -43,7 +46,10 @@ public class Alarm extends BroadcastReceiver
 
 	public void CancelAlarm(Context context)
 	{
+		//for debugging...
 		Log.d("ALARM!!", "CancelAlarm() executed!");
+		
+		
 		Intent intent = new Intent(context, Alarm.class);
 		PendingIntent sender = PendingIntent.getBroadcast(context, 0, intent, 0);
 		AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);

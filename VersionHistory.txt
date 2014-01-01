@@ -20,3 +20,9 @@
 - All 6 ESMs should display on startup.  But number 2 shows the range separately, while number 3 has it in star form with the graphical errors.  The graphics do not seem to be modifiable.
 - Alarm functionality is in the code, however I don’t know if it works.  Feel free to try it out.
 - Let me know if the project does not seem to run because of some error, I just copied and replaced everything from my renamed project folder into the folder in github.
+
+1/1 - Calvin
+- Fixed the ESMs and updated them to list the scale instead of stars
+- added some comments that make the code slightly easier to read
+- currently looking at how to make the alarm feature work better.
+- still need to integrate storage and retrieval of ESMs

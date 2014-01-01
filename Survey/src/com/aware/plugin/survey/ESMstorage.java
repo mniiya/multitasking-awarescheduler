@@ -18,7 +18,7 @@ public class ESMstorage extends Plugin{
 	final String ESM1 = "{'esm':" +
 			"{'esm_type': 2," +
 			"'esm_title':'1/6'," +
-			"'esm_instructions':'The user can only choose one option'," +
+			"'esm_instructions':'What are you doing right now?'," +
 			"'esm_radios':['In class','Studying','Face-to-Face interaction','None of the above']," +
 			"'esm_submit':'Next'," +
 			"'esm_expiration_threashold': 60," +
@@ -26,37 +26,21 @@ public class ESMstorage extends Plugin{
 	
 	final String ESM2 = "{'esm':" +
 			"{'esm_type': 2," +
-			"'esm_title':'2/6 (?)'," +
-			"'esm_instructions':'The user can only choose one option'," +
-			"'esm_radios':['0','1','2','3','4','5','6','7']," +
+			"'esm_title':'2/6'," +
+			"'esm_instructions':'What is your stress level right now?'," +
+			"'esm_radios':['1 (lowest)','2','3','4','5','6','7 (highest)']," +
 			"'esm_submit':'Next'," +
 			"'esm_expiration_threashold': 60," +
 			"'esm_trigger':'AWARE Tester'}}";
 
-	//switched #2 out with listing 0 - 7
-	final String ESM99 = "{'esm':" +
-			"{'esm_type': 4," +
-			"'esm_title':'2/6'," +
-			"'esm_instructions':'What is your stress level now?'," +
-			"'esm_likert_max': 6," +
-			"'esm_likert_max_label': 'Highest'," +
-			"'esm_likert_min_label': 'Lowest'," +
-			"'esm_likert_step': 1," +
-			"'esm_submit': 'OK'," +
-			"'esm_expiration_threashold': 60," +
-			"'esm_trigger': 'AWARE Tester'}}";
-
 	final String ESM3 = "{'esm':" +
-			"{'esm_type': 4," +
-			"'esm_title':'3/6 (?)'," +
-			"'esm_instructions':'What is your mood now?'," +
-			"'esm_likert_max': 6," +
-			"'esm_likert_max_label': 'Positive'," +
-			"'esm_likert_min_label': 'Negative'," +
-			"'esm_likert_step': 1," +
-			"'esm_submit': 'OK'," +
+			"{'esm_type': 2," +
+			"'esm_title':'3/6'," +
+			"'esm_instructions':'What is your mood right now?'," +
+			"'esm_radios':['1 (negative)','2','3','4','5','6','7 (positive)']," +
+			"'esm_submit':'Next'," +
 			"'esm_expiration_threashold': 60," +
-			"'esm_trigger': 'AWARE Tester'}}";
+			"'esm_trigger':'AWARE Tester'}}";
 
 	final String ESM4 = "{'esm':" +
 			"{'esm_type': 4," +
