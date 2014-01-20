@@ -10,10 +10,19 @@ import android.os.Vibrator;
 import android.app.Application;
 import android.content.Intent;
 
-public class ESMstorage extends Plugin{
+public class ESMstorage extends Aware_Sensor{
 
 	//listing ESMs for now, could be changed to readable from external file
 	//instead of being hard coded sometime in the future.
+
+	//buffer
+	final String ESM0 = "{'esm':" +
+			"{'esm_type': 5," +
+			"'esm_title': 'Survey'," +
+			"'esm_instructions': 'Press Next to start...'," +
+			"'esm_quick_answers': ['Next']," +
+			"'esm_expiration_threashold': 60," +
+			"'esm_trigger': 'AWARE Tester'}}";
 	
 	final String ESM1 = "{'esm':" +
 			"{'esm_type': 2," +
@@ -23,7 +32,7 @@ public class ESMstorage extends Plugin{
 			"'esm_submit':'Next'," +
 			"'esm_expiration_threashold': 60," +
 			"'esm_trigger':'AWARE Tester'}}";
-	
+
 	final String ESM2 = "{'esm':" +
 			"{'esm_type': 2," +
 			"'esm_title':'2/6'," +
@@ -79,32 +88,8 @@ public class ESMstorage extends Plugin{
 			"'esm_trigger': 'AWARE Tester'}}";
 
 	//combines all the esms to be displayed.
-	final String ALL_ESM = "[" + ESM1 + "," + ESM2 + "," + ESM3 + 
-							"," + ESM4 + "," + ESM5 + "," + ESM6 + "]";
-	
-
-	//Vibrator v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-
-	public void startESM()
-	{
-		/*
-		//v.vibrate(500);
-
-		//Make sure ESMs are active within the framework
-		Aware.setSetting(getContentResolver(), Aware_Preferences.STATUS_ESM, true);
-
-		Intent esm = new Intent(ESM.ACTION_AWARE_QUEUE_ESM);
-
-		esm.putExtra(ESM.EXTRA_ESM, ALL_ESM);
-		sendBroadcast(esm);
-		*/
-	}
-	
-	public ESMstorage()
-	{
-		//not sure if this is necessary...
-	}
-
+	final String ALL_ESM = "[" + ESM0 + "," + ESM1 + "," + ESM2 + "," + ESM3 + 
+			"," + ESM4 + "," + ESM5 + "," + ESM6 + "]";
 
 
 }
