@@ -1,6 +1,7 @@
 package com.aware.plugin.survey;
 
 import java.util.Calendar;
+import java.util.Random;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -23,19 +24,24 @@ public class Alarm extends WakefulBroadcastReceiver {
 	private AlarmManager alarmMgr;
 	private PendingIntent alarmIntent;
 	private Calendar calendar;
+	
+	private int range;
+	private Random r;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {   
 
 		Toast t = Toast.makeText(context, "ALARM!!", Toast.LENGTH_LONG);
 		t.show();
-
+		
 		//gets current time
 		calendar.getInstance();
 		
 		//checks if it is within 8am - 3am
 		if((calendar.HOUR_OF_DAY < 3) || (calendar.HOUR_OF_DAY > 8))
 			doSurvey(context);
+		
+		setAlarm(context);
 	}
 
 	public void setAlarm(Context context) {
@@ -46,6 +52,17 @@ public class Alarm extends WakefulBroadcastReceiver {
 		intent.putExtra(ONE_TIME, Boolean.FALSE);
 		alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
 		
+		r = new Random();
+		range = 1000*60*(r.nextInt(76-45) + 45);
+		
+
+		Toast t = Toast.makeText(context, Integer.toString(range), Toast.LENGTH_LONG);
+		t.show();
+		
+		alarmMgr.set(AlarmManager.RTC_WAKEUP, 
+				(calendar.getInstance().getTimeInMillis() + range), alarmIntent);
+		
+		/*
 		//set alarm to repeat
 	    alarmMgr.setInexactRepeating
 		//alarmMgr.setRepeating
@@ -54,8 +71,9 @@ public class Alarm extends WakefulBroadcastReceiver {
 				AlarmManager.INTERVAL_HOUR, 
 				//1000*60*3, // 3 minutes, for debugging
 				alarmIntent);
+				*/
 		
-		Toast t = Toast.makeText(context, "alarm set", Toast.LENGTH_LONG);
+		t = Toast.makeText(context, "alarm set", Toast.LENGTH_LONG);
 		t.show();
 	}
 

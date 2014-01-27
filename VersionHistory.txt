@@ -31,10 +31,14 @@
 - Added Survey_v1.2.3
 - Currently broken, trying to figure out why it does not want to run.
 
-
 1/20 - Calvin
 - Updated Survey
 - Alarm is working
 - Duration —> 8am to 3am
 - Added buffer ESM to prevent accidental skipping
 - Still need to extend random range of alarms
+
+1/27 - Calvin
+- Added time range —> 45-75 minute range between each ESM broadcast
+- ESMS should expire at 45 minutes, but haven’t tested extensively
+- Alarms will not repeat, instead it restarts the alarm every time it goes off
