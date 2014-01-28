@@ -42,3 +42,7 @@
 - Added time range —> 45-75 minute range between each ESM broadcast
 - ESMS should expire at 45 minutes, but haven’t tested extensively
 - Alarms will not repeat, instead it restarts the alarm every time it goes off
+
+1/27 - Calvin
+- Removed Toasts in project that was used for debugging
+- Removed Survey_v1.2.3
