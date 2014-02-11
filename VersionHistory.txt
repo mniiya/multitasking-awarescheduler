@@ -46,3 +46,7 @@
 1/27 - Calvin
 - Removed Toasts in project that was used for debugging
 - Removed Survey_v1.2.3
+
+2/11 - Calvin
+- Added sound and a check to see if the phone is on silent mode
+- Untested

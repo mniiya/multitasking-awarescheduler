@@ -7,9 +7,11 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.support.v4.content.WakefulBroadcastReceiver;
-//import android.widget.Toast;
+import android.widget.Toast;
 
 import com.aware.ESM;
 import com.aware.plugin.survey.ESMstorage;
@@ -27,12 +29,14 @@ public class Alarm extends WakefulBroadcastReceiver {
 	
 	private int range;
 	private Random r;
+	MediaPlayer background;
+	AudioManager am;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {   
 
-//		Toast t = Toast.makeText(context, "ALARM!!", Toast.LENGTH_LONG);
-//		t.show();
+		Toast t = Toast.makeText(context, "ALARM!!", Toast.LENGTH_LONG);
+		t.show();
 		
 		//gets current time
 		calendar.getInstance();
@@ -56,8 +60,8 @@ public class Alarm extends WakefulBroadcastReceiver {
 		range = 1000*60*(r.nextInt(76-45) + 45);
 		
 
-//		Toast t = Toast.makeText(context, Integer.toString(range), Toast.LENGTH_LONG);
-//		t.show();
+		Toast t = Toast.makeText(context, Integer.toString(range), Toast.LENGTH_LONG);
+		t.show();
 		
 		alarmMgr.set(AlarmManager.RTC_WAKEUP, 
 				(calendar.getInstance().getTimeInMillis() + range), alarmIntent);
@@ -73,8 +77,8 @@ public class Alarm extends WakefulBroadcastReceiver {
 				alarmIntent);
 				*/
 		
-//		t = Toast.makeText(context, "alarm set", Toast.LENGTH_LONG);
-//		t.show();
+		t = Toast.makeText(context, "alarm set", Toast.LENGTH_LONG);
+		t.show();
 	}
 
 
@@ -82,15 +86,25 @@ public class Alarm extends WakefulBroadcastReceiver {
 		
 		if (alarmMgr!= null) {
 			alarmMgr.cancel(alarmIntent);
-//			Toast u = Toast.makeText(context, "alarm cancelled", Toast.LENGTH_LONG);
-//			u.show();
+			Toast u = Toast.makeText(context, "alarm cancelled", Toast.LENGTH_LONG);
+			u.show();
 		}
 		
 	}
 	
 	public void doSurvey (Context context) {	
-		Vibrator vibrator = (Vibrator) context.getSystemService(context.VIBRATOR_SERVICE);
+		
+		Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+		am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+		
+		if(am.getRingerMode() == AudioManager.RINGER_MODE_NORMAL)
+		{
+			background = MediaPlayer.create(context, R.raw.success);
+			background.setLooping(false);
+			background.start();
+		}
 		vibrator.vibrate(500);
+
 		
 		//Define the ESM to be displayed
 		ESMstorage esms = new ESMstorage();
