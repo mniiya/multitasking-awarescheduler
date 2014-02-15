@@ -15,7 +15,6 @@ import android.os.Vibrator;
 import android.util.Log;
 import android.widget.Toast;
 import android.support.v4.content.WakefulBroadcastReceiver;
-import android.support.v4.app.TaskStackBuilder;
 
 import com.aware.ESM;
 import com.aware.plugin.survey.Alarm;
@@ -124,7 +123,7 @@ public class Alarm extends WakefulBroadcastReceiver {
 		Intent esmIntent = new Intent(context, ESMstorage.class);
 		esmIntent.addFlags(Intent.FLAG_DEBUG_LOG_RESOLUTION);
 
-	    PendingIntent pIntent = PendingIntent.getActivity(context, requestID, esmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+	    PendingIntent pIntent = PendingIntent.getBroadcast(context, requestID, esmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 	 
 		// build notification
 		NotificationCompat.Builder mBuilder =
