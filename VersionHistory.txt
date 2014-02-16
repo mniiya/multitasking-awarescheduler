@@ -51,3 +51,9 @@
 - Added sound and a check to see if the phone is on silent mode
 - Untested
 - Notification Project included as Survey_3.0n
+
+2/15 - Calvin
+- Added Survey_3.1n
+- Notifications working
+- still set to run every 1 minute
+- no automated canceling/deleting/removing notification yet
