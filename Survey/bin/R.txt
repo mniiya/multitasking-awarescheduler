@@ -6,6 +6,7 @@ int drawable ic_action_settings 0x7f020001
 int drawable ic_action_update 0x7f020002
 int drawable ic_launcher_aware 0x7f020003
 int drawable ic_launcher_settings 0x7f020004
+int drawable icon_notification 0x7f020005
 int id esm_answers 0x7f090007
 int id esm_cancel 0x7f090002
 int id esm_checkboxes 0x7f090001

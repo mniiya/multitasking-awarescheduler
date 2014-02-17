@@ -57,3 +57,7 @@
 - Notifications working
 - still set to run every 1 minute
 - no automated canceling/deleting/removing notification yet
+
+2/17 - Calvin
+- Updated Survey
+- Notifications set to remove old one upon new ESM broadcast

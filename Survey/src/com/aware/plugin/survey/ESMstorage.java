@@ -1,16 +1,13 @@
 package com.aware.plugin.survey;
 
-import com.aware.Aware;
-import com.aware.Aware_Preferences;
 import com.aware.ESM;
-import com.aware.utils.Aware_Sensor;
 
-import android.os.Vibrator;
-
-import android.app.Application;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
-public class ESMstorage extends Aware_Sensor{
+public class ESMstorage extends BroadcastReceiver {
 
 	//listing ESMs for now, could be changed to readable from external file
 	//instead of being hard coded sometime in the future.
@@ -90,6 +87,18 @@ public class ESMstorage extends Aware_Sensor{
 	//combines all the esms to be displayed.
 	final String ALL_ESM = "[" + ESM0 + "," + ESM1 + "," + ESM2 + "," + ESM3 + 
 			"," + ESM4 + "," + ESM5 + "," + ESM6 + "]";
+	
+	Toast t;
 
-
+	public void onReceive (Context context, Intent intent) {
+		
+		t = Toast.makeText(context, "RECEIVED", Toast.LENGTH_LONG);
+		t.show();
+		
+		//Queue the ESM to be displayed when possible
+		Intent esm = new Intent(ESM.ACTION_AWARE_QUEUE_ESM);
+		
+		esm.putExtra(ESM.EXTRA_ESM, ALL_ESM);
+		context.sendBroadcast(esm);	
+	}
 }

@@ -32,6 +32,7 @@ public class Plugin extends Aware_Sensor {
 		sendBroadcast(applySettings);
 		
 		a = new Alarm();
+		a.initialize(getApplicationContext());
 		a.setAlarm(getApplicationContext());
 	}
 
