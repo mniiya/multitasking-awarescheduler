@@ -61,3 +61,7 @@
 2/17 - Calvin
 - Updated Survey
 - Notifications set to remove old one upon new ESM broadcast
+
+2/17 - Calvin
+- Updated Survey to not show debug/toast messages
+- Added video

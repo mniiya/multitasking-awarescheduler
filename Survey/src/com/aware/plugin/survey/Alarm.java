@@ -13,7 +13,6 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.util.Log;
-import android.widget.Toast;
 import android.support.v4.content.WakefulBroadcastReceiver;
 
 import com.aware.ESM;
@@ -44,9 +43,6 @@ public class Alarm extends WakefulBroadcastReceiver {
 
 	public void onReceive(Context context, Intent intent) {   
 
-		Toast t = Toast.makeText(context, "ALARM!!", Toast.LENGTH_LONG);
-		t.show();
-
 		Log.i(Plugin.TAG, "Alarm! received");
 		setAlarm(context);
 		
@@ -71,16 +67,9 @@ public class Alarm extends WakefulBroadcastReceiver {
 		range = 1000*60*(r.nextInt(76-45) + 45);
 		//range = 1000*60*1;
 		
-
-		Toast t = Toast.makeText(context, Integer.toString(range), Toast.LENGTH_LONG);
-		t.show();
-		
 		alarmMgr.set(AlarmManager.RTC_WAKEUP, 
 				(calendar.getInstance().getTimeInMillis() + range), alarmIntent);
 
-		
-		t = Toast.makeText(context, "alarm set", Toast.LENGTH_LONG);
-		t.show();
 		Log.i(Plugin.TAG, "Alarm Set");
 	}
 
@@ -89,8 +78,6 @@ public class Alarm extends WakefulBroadcastReceiver {
 		
 		if (alarmMgr!= null) {
 			alarmMgr.cancel(alarmIntent);
-			Toast u = Toast.makeText(context, "alarm cancelled", Toast.LENGTH_LONG);
-			u.show();
 			Log.i(Plugin.TAG, "Alarm Cancelled");
 		}	
 	}
@@ -104,8 +91,6 @@ public class Alarm extends WakefulBroadcastReceiver {
 	
 	public void notifyUser(Context context)
 	{
-		Toast t = Toast.makeText(context, "Notify User", Toast.LENGTH_LONG);
-		t.show();
 		Log.i(Plugin.TAG, "Notify User");
 		
 		//sets up ESM intent
