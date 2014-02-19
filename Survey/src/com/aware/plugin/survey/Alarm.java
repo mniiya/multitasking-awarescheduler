@@ -47,10 +47,12 @@ public class Alarm extends WakefulBroadcastReceiver {
 		setAlarm(context);
 		
 		//gets current time
-		calendar.getInstance();
+		calendar = calendar.getInstance();
+		
+		int hour = calendar.get(calendar.HOUR_OF_DAY);
 		
 		//checks if it is within 8am - 3am
-		if((calendar.HOUR_OF_DAY < 3) || (calendar.HOUR_OF_DAY > 8))
+		if((hour < 3) || (hour > 8))
 			notifyUser(context);	
 	}
 
@@ -66,6 +68,7 @@ public class Alarm extends WakefulBroadcastReceiver {
 		r = new Random();
 		range = 1000*60*(r.nextInt(76-45) + 45);
 		//range = 1000*60*1;
+
 		
 		alarmMgr.set(AlarmManager.RTC_WAKEUP, 
 				(calendar.getInstance().getTimeInMillis() + range), alarmIntent);
